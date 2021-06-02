@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Cathy-Chen-ops.github.io</id>
     <title>CathyChenの学习之旅</title>
-    <updated>2021-05-14T14:00:31.561Z</updated>
+    <updated>2021-06-02T09:05:05.477Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Cathy-Chen-ops.github.io"/>
     <link rel="self" href="https://Cathy-Chen-ops.github.io/atom.xml"/>
@@ -11,6 +11,98 @@
     <logo>https://Cathy-Chen-ops.github.io/images/avatar.png</logo>
     <icon>https://Cathy-Chen-ops.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, CathyChenの学习之旅</rights>
+    <entry>
+        <title type="html"><![CDATA[Anaconda下载及Tensorflow、Pytorch安装]]></title>
+        <id>https://Cathy-Chen-ops.github.io/post/anaconda-xia-zai-ji-tensorflowpytorch-an-zhuang/</id>
+        <link href="https://Cathy-Chen-ops.github.io/post/anaconda-xia-zai-ji-tensorflowpytorch-an-zhuang/">
+        </link>
+        <updated>2021-06-02T08:59:08.000Z</updated>
+        <content type="html"><![CDATA[<p><mark>Anaconda下载</mark></p>
+<ol>
+<li>官网<a href="https://www.anaconda.com/">Anaconda | The World's Most Popular Data Science Platform</a></li>
+<li>清华镜像<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">Index of /anaconda/archive/ | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></li>
+</ol>
+<p><mark>Anaconda包管理与环境管理</mark></p>
+<ul>
+<li>包管理：conda命令/pip命令</li>
+<li>环境管理：conda环境管理</li>
+</ul>
+<p><mark>conda换国内源</mark></p>
+<p>参考<a href="https://blog.csdn.net/qq_43198568/article/details/105626024">Anaconda之conda换国内源_你的大数据学长-CSDN博客_conda国内源</a>和<a href="https://mirrors.tuna.tsinghua.edu.cn/help/anaconda/">anaconda | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a></p>
+<p><mark>Tensorflow2.0安装</mark></p>
+<p>命令行操作:</p>
+<ul>
+<li>
+<p>创建环境conda create -n tensorflow python=3.6</p>
+</li>
+<li>
+<p>激活环境conda activate tensorflow</p>
+</li>
+<li>
+<p>安装所需要的包</p>
+<p>pip install numpy matplotlib Pillow scikit-learn pandas -i https://pypi.tuna.tsinghua.edu.cn/simple</p>
+</li>
+<li>
+<p>安装tensorflow2.0</p>
+<p>pip install tensorflow==2.4.0 -i https://pypi.tuna.tsinghua.edu.cn/simple</p>
+</li>
+<li>
+<p>测试</p>
+</li>
+</ul>
+<p><mark>在jupyter中使用tensorflow</mark></p>
+<ul>
+<li>
+<p>pip install ipython -i https://pypi.tuna.tsinghua.edu.cn/simple</p>
+<p>pip install jupyter -i https://pypi.tuna.tsinghua.edu.cn/simple</p>
+<p>(在配置新的conda环境时，可以用conda创建环境，尽可能使用pip安装代码包，如果某个代码包在pip上不提供，再用conda install。这样可以尽可能避开conda检查兼容性的问题。)</p>
+</li>
+<li>
+<p>安装当前环境的内核:python -m ipykernel install --user</p>
+</li>
+<li>
+<p>jupyter notebook进入jupyter notebook</p>
+</li>
+</ul>
+<p>P.S.注意兼容性问题，前两次都用python3.8搭建的tensorflow2.4.0,结果jupyter出现kernel error,显示DLL load failed while importing win32api: 找不到指定的模块；无法解决。后用python3.6搭tensorflow2.4.0成功。（吐血了😣）</p>
+<p><mark>修改Jupyter Notebook工作空间</mark></p>
+<ul>
+<li>
+<p>命令行输入jupyter notebook --generate-config</p>
+</li>
+<li>
+<p>根据路径修改jupyter_notebook_config.py文件</p>
+<p>找到</p>
+<pre><code class="language-python">## The directory to use for notebooks and kernels. 
+## c.NotebookApp.notebook_dir = ''
+</code></pre>
+<p>修改为</p>
+<pre><code class="language-python">## The directory to use for notebooks and kernels. 
+c.NotebookApp.notebook_dir = 'D:\jupyter_doc'
+</code></pre>
+</li>
+</ul>
+<p><mark>PyTorch安装</mark></p>
+<ul>
+<li>
+<p>创建环境</p>
+<p>conda create -n pytorch python=3.6</p>
+<p>conda activate pytorch</p>
+</li>
+<li>
+<p>添加PyTorch镜像</p>
+<p>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/win-64/</p>
+</li>
+<li>
+<p>进入官网<a href="https://pytorch.org/get-started/locally/">Start Locally | PyTorch</a>查询下载语句</p>
+<p>cpu版本为：conda install pytorch torchvision torchaudio cpuonly（注意去掉-c pytorch）</p>
+</li>
+<li>
+<p>测试</p>
+</li>
+</ul>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://Cathy-Chen-ops.github.io/post/hello-gridea/</id>
