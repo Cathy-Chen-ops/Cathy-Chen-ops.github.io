@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Cathy-Chen-ops.github.io</id>
     <title>CathyChenの学习之旅</title>
-    <updated>2021-07-17T14:28:09.871Z</updated>
+    <updated>2021-07-17T14:44:51.365Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Cathy-Chen-ops.github.io"/>
     <link rel="self" href="https://Cathy-Chen-ops.github.io/atom.xml"/>
@@ -11,6 +11,301 @@
     <logo>https://Cathy-Chen-ops.github.io/images/avatar.png</logo>
     <icon>https://Cathy-Chen-ops.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, CathyChenの学习之旅</rights>
+    <entry>
+        <title type="html"><![CDATA[**SQL基础**]]></title>
+        <id>https://Cathy-Chen-ops.github.io/post/sql-ji-chu/</id>
+        <link href="https://Cathy-Chen-ops.github.io/post/sql-ji-chu/">
+        </link>
+        <updated>2021-07-17T14:38:16.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="结构化查询语言-sql">结构化查询语言 (SQL)</h2>
+<ul>
+<li>
+<p>学习目标：利用 SQL 来分析数据和回答商业问题</p>
+</li>
+<li>
+<p>Syllabus：</p>
+<ul>
+<li>SQL基础知识</li>
+<li>SQL连接</li>
+<li>SQL聚合</li>
+</ul>
+</li>
+<li>
+<p>使用<strong>传统关系数据库</strong>与 SQL 交互的优点:</p>
+<ul>
+<li>SQL 很容易理解。</li>
+<li>传统的数据库允许我们直接访问数据。</li>
+<li>传统的数据库可使我们审核和复制数据。</li>
+<li>SQL 是一个可一次分析多个表的很好工具。</li>
+<li>相对于 Google Analytics 等仪表板工具，SQL 可使我们分析更复杂的问题。</li>
+</ul>
+</li>
+<li>
+<p>SQL与NoSQL</p>
+<p>NoSQL 更适用于基于网络数据的环境，最常用的 NoSQL 语言之一是 <a href="https://www.mongodb.com/">MongoDB</a></p>
+</li>
+<li>
+<p>Why Databases</p>
+<ol>
+<li>保证数据的完整性</li>
+<li>可以快速访问数据</li>
+<li>可以很容易共享数据</li>
+</ol>
+</li>
+<li>
+<p>SQL 数据库中所存储数据的特点</p>
+<ol>
+<li>数据库中的数据存储在类似于 Excel 电子表格的表中</li>
+<li>同一列中的所有数据必须符合数据类型</li>
+</ol>
+</li>
+<li>
+<p>一些最受欢迎的数据库</p>
+<ol>
+<li>MySQL</li>
+<li>Access</li>
+<li>Oracle</li>
+<li>Microsoft SQL Server</li>
+<li>Postgres</li>
+</ol>
+</li>
+</ul>
+<h2 id="sql基础">SQL基础</h2>
+<ul>
+<li>
+<p>ERD(Entity Relationship Diagram)</p>
+<p><strong>实体关系图</strong> (ERD) 是查看数据库中数据的常用方式</p>
+</li>
+<li>
+<p>语句</p>
+<p>SQL 语句是可以读取和处理数据的代码。SQL 不区分大小写。另外，还可以使用分号结束 SQL 语句，但某些 SQL 环境结尾时不需要分号。</p>
+<ul>
+<li><strong>CREATE TABLE</strong> 是一个在数据库中创建新表的语句</li>
+<li><strong>DROP TABLE</strong> 是删除数据库中表的语句</li>
+<li><strong>SELECT <strong>读取并显示数据。我们将这称为</strong>查询</strong></li>
+</ul>
+</li>
+<li>
+<p>SELECT&amp;FROM（both mandatory）</p>
+<ul>
+<li><strong>SELECT</strong>用于提醒查询要返回哪些列;列名以逗号分隔，最后无需符号，*表示查询所有列</li>
+<li><strong>FROM</strong>用于提醒查询在哪个表中查询。注意，这个表中需要有列。</li>
+</ul>
+</li>
+<li>
+<p>规定查询格式</p>
+<ul>
+<li>大写：大写命令（SELECT、FROM），小写查询中的其他内容</li>
+<li>表和变量名中无需空格：通常在列名中使用下划线，避免使用空格</li>
+<li>在查询中使用空格：SQL 查询忽略空格，因此可以根据需要在代码之间添加空格和空行</li>
+<li>SQL不区分大小写</li>
+<li>分号：在每个语句的末尾添加一个分号是最好的做法</li>
+</ul>
+</li>
+<li>
+<p>LIMIT</p>
+<p>用于查看表的前几行；始终显示在最后</p>
+<pre><code class="language-sql">SELECT *
+FROM orders
+LIMIT 10;
+</code></pre>
+</li>
+<li>
+<p>ORDER BY</p>
+<ul>
+<li>ORDER BY语句可使我们按任意行排序表，默认是按升序排序；ORDER BY 语句中后添加 DESC，可按降序排序</li>
+<li>ORDER BY语句可按照从左至右顺序对多列进行排序</li>
+</ul>
+</li>
+<li>
+<p>WHERE</p>
+<ul>
+<li>
+<p>可以基于必须满足的条件，使用 WHERE语句来为表格创建子集</p>
+</li>
+<li>
+<p>WHERE中常用的数值运算符包括&quot;&gt;&quot;&lt;&quot;&gt;=&quot;&lt;=&quot;=&quot;&quot;!=&quot;</p>
+</li>
+<li>
+<p>对于非数字数据，可以使用&quot;=&quot;和&quot;!=&quot;运算符，文本数据中使用单引号；通常将WHERE与非数字数据字段一起使用时，我们会使用 <strong>LIKE</strong>、<strong>NOT</strong> 或 <strong>IN</strong> 运算符</p>
+</li>
+<li>
+<pre><code class="language-sql">SELECT name, website, primary_poc
+FROM accounts
+WHERE name = 'Exxon Mobil';
+</code></pre>
+</li>
+<li>
+<pre><code class="language-sql">SELECT id, account_id, standard_amt_usd/standard_qty AS unit_price
+FROM orders
+LIMIT 10;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>派生列</p>
+</li>
+<li>
+<p>逻辑运算符</p>
+<ol>
+<li><strong>LIKE</strong><br>
+用于你可能 <strong>不</strong> 知道自己想<strong>准确</strong>查找哪些内容的情况。</li>
+<li><strong>IN</strong><br>
+用于多个条件的情况。</li>
+<li><strong>NOT</strong><br>
+用于选择 <strong>NOT LIKE</strong> 或 <strong>NOT IN</strong> 某个条件的所有行。</li>
+<li><strong>AND &amp; BETWEEN</strong><br>
+可用于组合所有组合条件必须为真的运算。</li>
+<li><strong>OR</strong><br>
+可用于组合至少一个组合条件必须为真的运算。</li>
+</ol>
+</li>
+<li>
+<p>LIKE</p>
+<ul>
+<li>
+<p><strong>LIKE</strong> 运算符经常与 <code>％</code> 一起使用，<code>％</code> 告诉我们，我们可能会想要任何数量的字符，产生一组特定的字符或者遵循一组特定的字符</p>
+</li>
+<li>
+<p>需要用单引号或双引号将传达给 <strong>LIKE</strong> 运算符的文本括住</p>
+</li>
+<li>
+<pre><code class="language-sql">SELECT name
+FROM accounts
+WHERE name LIKE '%one%';
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>IN</p>
+<ul>
+<li>可以检查我们要提取数据的一个、两个或多个列值</li>
+<li>对于文本，可以使用单引号或双引号</li>
+</ul>
+</li>
+<li>
+<p>NOT</p>
+<p>NOT LIKE/NOT IN</p>
+</li>
+<li>
+<p>AND</p>
+<ul>
+<li><strong>AND</strong> 运算符用于 <strong>WHERE</strong> 语句中，用于一次考虑多个逻辑子句</li>
+</ul>
+</li>
+<li>
+<p>BETWEEN</p>
+<ul>
+<li>
+<p>在 <strong>AND</strong> 语句的不同部分使用相同的列时，使用<strong>BETWEEN</strong>可以让语句更清晰</p>
+</li>
+<li>
+<pre><code class="language-sql">WHERE column &gt;= 6 AND column &lt;= 10
+#等价于
+WHERE column BETWEEN 6 AND 10
+</code></pre>
+</li>
+<li>
+<pre><code class="language-sql">SELECT *
+FROM web_events
+WHERE channel IN ('organic', 'adwords') AND occurred_at BETWEEN '2016-01-01' AND '2017-01-01'
+ORDER BY occurred_at DESC;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>OR</p>
+<ul>
+<li>
+<p>将多个运算组合到一起时，可能经常需要使用括号来确保我们要执行的逻辑能得到正确执行</p>
+</li>
+<li></li>
+<li>
+<pre><code class="language-sql">SELECT *
+FROM accounts
+WHERE (name LIKE 'C%' OR name LIKE 'W%') 
+           AND ((primary_poc LIKE '%ana%' OR primary_poc LIKE '%Ana%') 
+           AND primary_poc NOT LIKE '%eana%');
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>总结</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><strong>语句</strong></th>
+<th style="text-align:left"><strong>用法</strong></th>
+<th style="text-align:left"><strong>其他详情</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">SELECT</td>
+<td style="text-align:left">SELECT <strong>Col1</strong>, <strong>Col2</strong>, ...</td>
+<td style="text-align:left">提供你想要的列</td>
+</tr>
+<tr>
+<td style="text-align:left">FROM</td>
+<td style="text-align:left">FROM <strong>Table</strong></td>
+<td style="text-align:left">提供列存在的表</td>
+</tr>
+<tr>
+<td style="text-align:left">LIMIT</td>
+<td style="text-align:left">LIMIT <strong>10</strong></td>
+<td style="text-align:left">限制返回的行数</td>
+</tr>
+<tr>
+<td style="text-align:left">ORDER BY</td>
+<td style="text-align:left">ORDER BY <strong>Col</strong></td>
+<td style="text-align:left">根据列对表排序。与 <strong>DESC</strong> 一起使用。</td>
+</tr>
+<tr>
+<td style="text-align:left">WHERE</td>
+<td style="text-align:left">WHERE <strong>Col &gt; 5</strong></td>
+<td style="text-align:left">用于过滤结果的条件语句</td>
+</tr>
+<tr>
+<td style="text-align:left">LIKE</td>
+<td style="text-align:left">WHERE <strong>Col LIKE '%me%'</strong></td>
+<td style="text-align:left">仅拉取文本中包含 'me' 的列</td>
+</tr>
+<tr>
+<td style="text-align:left">IN</td>
+<td style="text-align:left">WHERE <strong>Col IN ('Y', 'N')</strong></td>
+<td style="text-align:left">仅过滤包含 'Y' 或 'N' 列的行</td>
+</tr>
+<tr>
+<td style="text-align:left">NOT</td>
+<td style="text-align:left">WHERE <strong>Col NOT IN ('Y', 'N')</strong></td>
+<td style="text-align:left"><strong>NOT</strong> 经常与 <strong>LIKE</strong> 和 <strong>IN</strong> 一起使用</td>
+</tr>
+<tr>
+<td style="text-align:left">AND</td>
+<td style="text-align:left">WHERE <strong>Col1 &gt; 5 AND Col2 &lt; 3</strong></td>
+<td style="text-align:left">过滤两个或多个条件必须为真的行</td>
+</tr>
+<tr>
+<td style="text-align:left">OR</td>
+<td style="text-align:left">WHERE <strong>Col1 &gt; 5 OR Col2 &lt; 3</strong></td>
+<td style="text-align:left">过滤至少一个条件必须为真的行</td>
+</tr>
+<tr>
+<td style="text-align:left">BETWEEN</td>
+<td style="text-align:left">WHERE <strong>Col BETWEEN 3 AND 5</strong></td>
+<td style="text-align:left">通常比使用 <strong>AND</strong> 的语法简单</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>​    <strong>TIPS：关键词的顺序非常重要！</strong></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CH1 Why Program?]]></title>
         <id>https://Cathy-Chen-ops.github.io/post/ch1-why-program/</id>
