@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CH1 Why Program? | CathyChenの学习之旅</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+<link rel="shortcut icon" href="https://Cathy-Chen-ops.github.io/favicon.ico?v=1626532078392">
+<link rel="stylesheet" href="https://Cathy-Chen-ops.github.io/styles/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="This very fact that computers are good at things that humans are not is why you need to become skilled at talking “compu..." />
+    <meta name="keywords" content="PY4E,python" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://Cathy-Chen-ops.github.io">
+        <img src="https://Cathy-Chen-ops.github.io/images/avatar.png?v=1626532078392" class="site-logo">
+        <h1 class="site-title">CathyChenの学习之旅</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      今天不学习
+明天变垃圾
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Cathy-Chen-ops.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CH1 Why Program?</h2>
+            <div class="post-date">2021-07-17</div>
+            
+              <div class="feature-container" style="background-image: url('https://img9.doubanio.com/view/subject/l/public/s29149564.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>This very fact that computers are good at things that humans are not is why you need to become skilled at talking “computer language”.</p>
+<h3 id="11-creativity-and-motivation">1.1 Creativity and motivation</h3>
+<p>Building useful, elegant, and clever programs for others to use is a very creative activity.</p>
+<p>When you first start, you will be both the programmer and the end user of your programs. As you gain skill as a programmer and programming feels more creative to you, your thoughts may turn toward developing programs for others.</p>
+<h3 id="12-computer-hardware-architecture">1.2 Computer hardware architecture</h3>
+<img src="C:\Users\15367\AppData\Roaming\Typora\typora-user-images\image-20210716195157380.png" alt="image-20210716195157380" style="zoom:67%;" />
+<p>As a programmer you will mostly be “talking” to the CPU and telling it what to do next. Sometimes you will tell the CPU to use the main memory, secondary memory, network, or the input/output devices.</p>
+<h3 id="13-understanding-programming">1.3 Understanding programming</h3>
+<p>In a sense, you need two skills to be a programmer:</p>
+<ul>
+<li>First, you need to know the programming language (Python) - you need to know the vocabulary and the grammar.</li>
+<li>Second, you need to “tell a story”. In writing a story, you combine words and sentences to convey an idea to the reader.</li>
+</ul>
+<h3 id="14-words-and-sentences">1.4 Words and sentences</h3>
+<p>reserved words in Python：</p>
+<img src="C:\Users\15367\AppData\Roaming\Typora\typora-user-images\image-20210716205028536.png" alt="image-20210716205028536" style="zoom:67%;" />
+<h3 id="15-conversing-with-python">1.5 Conversing with Python</h3>
+<h3 id="16-terminology-interpreter-and-compiler">1.6 Terminology: Interpreter and compiler</h3>
+<p>Python is a high-level language. The actual hardware inside the Central Processing Unit (CPU) does not understand any of these high-level languages. The CPU understands a language we call machine language.</p>
+<p>Instead we build various translators to allow programmers to write in high-level languages like Python or JavaScript and these translators convert the programs to machine language for actual execution by the CPU. These programming language translators fall into two general categories: (1) interpreters and  (2) compilers.</p>
+<p>An interpreter reads the source code of the program as written by the programmer, parses the source code, and interprets the instructions on the fly. Python is an interpreter and when we are running Python interactively, we can type a line of Python (a sentence) and Python processes it immediately and is ready for us to type another line of Python.</p>
+<p>The Python interpreter is written in a high-level language called “C”. So Python is a program itself and it is compiled into machine code.</p>
+<h3 id="17-writing-a-program">1.7 Writing a program</h3>
+<p>When we want to write a program, we use a text editor to write the Python instructions into a file, which is called a script. By convention, Python scripts have names that end with .py.</p>
+<pre><code class="language-python">$ cat hello.py 
+print('Hello world!') 
+$ python hello.py 
+Hello world!
+</code></pre>
+<h3 id="18-what-is-a-program">1.8 What is a program?</h3>
+<h3 id="19-the-building-blocks-of-programs">1.9 The building blocks of programs</h3>
+<p>There are some low-level conceptual patterns that we use to construct programs.</p>
+<ul>
+<li><strong>input</strong> Get data from the “outside world”. This might be reading data from a file, or even some kind of sensor like a microphone or GPS. In our initial programs, our input will come from the user typing data on the keyboard.</li>
+<li><strong>output</strong> Display the results of the program on a screen or store them in a file or perhaps write them to a device like a speaker to play music or speak text.</li>
+<li><strong>sequential execution</strong> Perform statements one after another in the order they are encountered in the script.</li>
+<li><strong>conditional execution</strong> Check for certain conditions and then execute or skip a sequence of statements.</li>
+<li><strong>repeated execution</strong> Perform some set of statements repeatedly, usually with some variation.</li>
+<li><strong>reuse</strong> Write a set of instructions once and give them a name and then reuse those instructions as needed throughout your program.</li>
+</ul>
+<h3 id="110-what-could-possibly-go-wrong">1.10 What could possibly go wrong?</h3>
+<ul>
+<li><strong>Syntax errors</strong> A syntax error means that you have violated the “grammar” rules of Python. Python does its best to point right at the line and character where it noticed it was confused. The only tricky bit of syntax errors is that sometimes the mistake that needs fixing is actually earlier in the program than where Python noticed it was confused. So the line and character that Python indicates in a syntax error may just be a starting point for your investigation.</li>
+<li><strong>Logic errors</strong> A logic error is when your program has good syntax but there is a mistake in the order of the statements or perhaps a mistake in how the statements relate to one another.</li>
+<li><strong>Semantic errors</strong> A semantic error is when your description of the steps to take is syntactically perfect and in the right order, but there is simply a mistake in the program. The program is perfectly correct but it does not do what you intended for it to do.</li>
+</ul>
+<h3 id="111-debugging">1.11 Debugging</h3>
+<p>Debugging is the process of finding the cause of the error in your code. When you are debugging a program, and especially if you are working on a hard bug, there are four things to try:</p>
+<ul>
+<li><strong>reading</strong> Examine your code, read it back to yourself, and check that it says what you meant to say.</li>
+<li><strong>running</strong> Experiment by making changes and running different versions. Often if you display the right thing at the right place in the program, the problem becomes obvious, but sometimes you have to spend some time to build scaffolding.</li>
+<li><strong>ruminating</strong> Take some time to think! What kind of error is it: syntax, runtime, semantic? What information can you get from the error messages, or from the output of the program? What kind of error could cause the problem you’re seeing? What did you change last, before the problem appeared?</li>
+<li><strong>retreating</strong> At some point, the best thing to do is back off, undoing recent changes, until you get back to a program that works and that you understand. Then you can start rebuilding.</li>
+</ul>
+<h3 id="112-the-learning-journey">1.12 The learning journey</h3>
+<h3 id="113-glossary">1.13 Glossary</h3>
+<ul>
+<li><strong>compile</strong> To translate a program written in a high-level language into a low-level language all at once, in preparation for later execution.</li>
+<li><strong>interpret</strong> To execute a program in a high-level language by translating it one line at a time.</li>
+<li><strong>parse</strong> To examine a program and analyze the syntactic structure.</li>
+<li><strong>source code</strong> A program in a high-level language.</li>
+</ul>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://Cathy-Chen-ops.github.io/tag/R9Op2nv99/" class="tag">
+                    PY4E
+                  </a>
+                
+                  <a href="https://Cathy-Chen-ops.github.io/tag/bTUGMFW1F/" class="tag">
+                    python
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://Cathy-Chen-ops.github.io/post/anaconda-xia-zai-ji-tensorflowpytorch-an-zhuang/">
+                  <h3 class="post-title">
+                    Anaconda下载及Tensorflow、Pytorch安装
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
