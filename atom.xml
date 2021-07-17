@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Cathy-Chen-ops.github.io</id>
     <title>CathyChenの学习之旅</title>
-    <updated>2021-07-17T14:44:51.365Z</updated>
+    <updated>2021-07-17T14:53:31.384Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Cathy-Chen-ops.github.io"/>
     <link rel="self" href="https://Cathy-Chen-ops.github.io/atom.xml"/>
@@ -12,7 +12,7 @@
     <icon>https://Cathy-Chen-ops.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, CathyChenの学习之旅</rights>
     <entry>
-        <title type="html"><![CDATA[**SQL基础**]]></title>
+        <title type="html"><![CDATA[SQL基础]]></title>
         <id>https://Cathy-Chen-ops.github.io/post/sql-ji-chu/</id>
         <link href="https://Cathy-Chen-ops.github.io/post/sql-ji-chu/">
         </link>
