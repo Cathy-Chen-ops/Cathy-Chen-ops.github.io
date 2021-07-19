@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Cathy-Chen-ops.github.io</id>
     <title>CathyChenの学习之旅</title>
-    <updated>2021-07-19T03:47:09.739Z</updated>
+    <updated>2021-07-19T03:53:46.133Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Cathy-Chen-ops.github.io"/>
     <link rel="self" href="https://Cathy-Chen-ops.github.io/atom.xml"/>
@@ -11,6 +11,133 @@
     <logo>https://Cathy-Chen-ops.github.io/images/avatar.png</logo>
     <icon>https://Cathy-Chen-ops.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, CathyChenの学习之旅</rights>
+    <entry>
+        <title type="html"><![CDATA[CH3 Conditional execution]]></title>
+        <id>https://Cathy-Chen-ops.github.io/post/ch3-conditional-execution/</id>
+        <link href="https://Cathy-Chen-ops.github.io/post/ch3-conditional-execution/">
+        </link>
+        <updated>2021-07-19T03:48:05.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="31-boolean-expressions"><strong>3.1 Boolean expressions</strong></h3>
+<ul>
+<li>
+<p>A boolean expression is an expression that is either true or false.</p>
+</li>
+<li>
+<p><strong>True</strong> and <strong>False</strong> are special values that belong to the class <strong>bool</strong></p>
+</li>
+<li>
+<p>comparison operators</p>
+<pre><code class="language-python">x == y # x is equal to y
+x != y # x is not equal to y
+x &gt; y # x is greater than y
+x &lt; y # x is less than y
+x &gt;= y # x is greater than or equal to y
+x &lt;= y # x is less than or equal to y
+x is y # x is the same as y
+x is not y # x is not the same as y
+</code></pre>
+</li>
+</ul>
+<h3 id="32-logical-operators"><strong>3.2 Logical operators</strong></h3>
+<ul>
+<li>
+<p>There are three logical operators: <strong>and</strong>, <strong>or</strong>, and <strong>not</strong>.</p>
+</li>
+<li>
+<p>Strictly speaking, the operands of the logical operators should be boolean expressions, but Python is not very strict. Any nonzero number is interpreted as “true.”</p>
+<pre><code class="language-python">&gt;&gt;&gt; 17 and True
+True
+</code></pre>
+</li>
+</ul>
+<h3 id="33-conditional-execution"><strong>3.3 Conditional execution</strong></h3>
+<ul>
+<li>
+<p><strong>If</strong> statement consists of a header line that ends with the colon character (: ) followd by an indented block. If the logical condition is true, then the indented statement gets executed. If the logical condition is false, the indented statement is skipped.</p>
+</li>
+<li>
+<pre><code class="language-python">if x &lt; 0 :
+pass # need to handle negative values!
+</code></pre>
+</li>
+</ul>
+<h3 id="34-alternative-execution"><strong>3.4 Alternative execution</strong></h3>
+<ul>
+<li>
+<p>A second form of the if statement is alternative execution, in which there are two possibilities and the condition determines which one gets executed. The alternatives are called branches, because they are branches in the flow of execution.</p>
+</li>
+<li>
+<pre><code class="language-python">if x%2 == 0 :
+print('x is even')
+else :
+print('x is odd')
+</code></pre>
+</li>
+</ul>
+<h3 id="35-chained-conditionals"><strong>3.5 Chained conditionals</strong></h3>
+<ul>
+<li>
+<p>There is no limit on the number of <strong>elif</strong> statements. If there is an <strong>else</strong> clause, it has to be at the end, but there doesn’t have to be one.</p>
+</li>
+<li>
+<pre><code class="language-python">if x &lt; y:
+print('x is less than y')
+elif x &gt; y:
+print('x is greater than y')
+else:
+print('x and y are equal')
+</code></pre>
+</li>
+<li>
+<p><mark>Each condition is checked in order. If the first is false, the next is checked, and so on. If one of them is true, the corresponding branch executes, and the statement ends. Even if more than one condition is true, only the first true branch executes.</mark></p>
+</li>
+</ul>
+<h3 id="36-nested-conditionals"><strong>3.6 Nested conditionals</strong></h3>
+<ul>
+<li>
+<p>Although the indentation of the statements makes the structure apparent, nested conditionals become difficult to read very quickly. In general, it is a good idea to avoid them when you can.</p>
+</li>
+<li>
+<pre><code class="language-python">if x == y:
+print('x and y are equal')
+else:
+if x &lt; y:
+print('x is less than y')
+else:
+print('x is greater than y')
+</code></pre>
+</li>
+</ul>
+<h3 id="37-catching-exceptions-using-try-and-except"><strong>3.7 Catching exceptions using try and except</strong></h3>
+<ul>
+<li>The idea of <strong>try</strong> and <strong>except</strong> is that you know that some sequence of instruction(s) may have a problem and you want to add some statements to be executed if an error occurs. These extra statements (the except block) are ignored if there is no error.</li>
+</ul>
+<h3 id="38-short-circuit-evaluation-of-logical-expressions"><strong>3.8 Short-circuit evaluation of logical expressions</strong></h3>
+<ul>
+<li>
+<p>When the evaluation of a logical expression stops because the overall value is already known, it is called <em>short-circuiting</em> the evaluation.</p>
+</li>
+<li>
+<p>While this may seem like a fine point, the short-circuit behavior leads to a clever technique called the <em>guardian pattern</em>.</p>
+</li>
+<li>
+<pre><code class="language-python">&gt;&gt;&gt; x = 6
+&gt;&gt;&gt; y = 0
+&gt;&gt;&gt; x &gt;= 2 and y != 0 and (x/y) &gt; 2
+False
+&gt;&gt;&gt; x &gt;= 2 and (x/y) &gt; 2 and y != 0
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+ZeroDivisionError: division by zero
+&gt;&gt;&gt;
+</code></pre>
+</li>
+</ul>
+<h3 id="39-debugging"><strong>3.9 Debugging</strong></h3>
+<p>In general, error messages indicate where the problem was discovered, but the actual error might be earlier in the code, sometimes on a previous line.</p>
+<h3 id="310-glossary"><strong>3.10 Glossary</strong></h3>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[CH2 Variables, expressions, and statements]]></title>
         <id>https://Cathy-Chen-ops.github.io/post/ch2-variables-expressions-and-statements/</id>
