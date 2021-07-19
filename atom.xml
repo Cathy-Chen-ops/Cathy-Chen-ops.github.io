@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Cathy-Chen-ops.github.io</id>
     <title>CathyChenの学习之旅</title>
-    <updated>2021-07-18T01:31:42.292Z</updated>
+    <updated>2021-07-19T03:47:09.739Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Cathy-Chen-ops.github.io"/>
     <link rel="self" href="https://Cathy-Chen-ops.github.io/atom.xml"/>
@@ -11,6 +11,94 @@
     <logo>https://Cathy-Chen-ops.github.io/images/avatar.png</logo>
     <icon>https://Cathy-Chen-ops.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, CathyChenの学习之旅</rights>
+    <entry>
+        <title type="html"><![CDATA[CH2 Variables, expressions, and statements]]></title>
+        <id>https://Cathy-Chen-ops.github.io/post/ch2-variables-expressions-and-statements/</id>
+        <link href="https://Cathy-Chen-ops.github.io/post/ch2-variables-expressions-and-statements/">
+        </link>
+        <updated>2021-07-19T03:43:46.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="21-values-and-types"><strong>2.1 Values and types</strong></h3>
+<pre><code class="language-python">&gt;&gt;&gt; type(3.2)
+&lt;class 'float'&gt;
+&gt;&gt;&gt; type('17')
+&lt;class 'str'&gt;
+</code></pre>
+<h3 id="22-variables"><strong>2.2 Variables</strong></h3>
+<ul>
+<li>
+<p>An assignment statement creates new variables and gives them values:</p>
+<pre><code class="language-python">&gt;&gt;&gt; message = 'And now for something completely different'
+&gt;&gt;&gt; n = 17
+&gt;&gt;&gt; pi = 3.1415926535897931
+</code></pre>
+</li>
+</ul>
+<h3 id="23-variable-names-and-keywords"><strong>2.3 Variable names and keywords</strong></h3>
+<ul>
+<li>Variable names can be arbitrarily long.</li>
+<li>They can contain both letters and numbers, but they cannot start with a number.</li>
+<li>It is legal to use uppercase letters, but it is a good idea to begin variable names with a lowercase letter .</li>
+<li>The underscore character ( _ ) can appear in a name. Variable names can start with an underscore character, but we generally avoid doing this unless we are writing library code for others to use.</li>
+<li>Variables names are case sensitive, so LaTeX is not the same as latex.</li>
+</ul>
+<h3 id="24-statements"><strong>2.4 Statements</strong></h3>
+<p>A statement is a unit of code that the Python interpreter can execute.</p>
+<h3 id="25-operators-and-operands"><strong>2.5 Operators and operands</strong></h3>
+<p>Operators are special symbols that represent computations like addition and multiplication. The values the operator is applied to are called operands.</p>
+<p>The operators +, -, *, /, and ** perform addition, subtraction, multiplication, division, and exponentiation; in Python 3.x, the result of division is a floating point result.</p>
+<h3 id="26-expressions"><strong>2.6 Expressions</strong></h3>
+<p>An expression is a combination of values, variables, and operators. A value all by itself is considered an expression, and so is a variable.</p>
+<h3 id="27-order-of-operations"><strong>2.7 Order of operations</strong></h3>
+<ul>
+<li>the rules of precedence---<em>PEMDAS</em></li>
+</ul>
+<h3 id="28-modulus-operator"><strong>2.8 Modulus operator</strong></h3>
+<pre><code class="language-python">&gt;&gt;&gt; quotient = 7 // 3
+&gt;&gt;&gt; print(quotient)
+2
+&gt;&gt;&gt; remainder = 7 % 3
+&gt;&gt;&gt; print(remainder)
+1
+</code></pre>
+<p>The modulus operator turns out to be surprisingly useful.</p>
+<ul>
+<li>
+<p>you can check whether one number is divisible by another</p>
+</li>
+<li>
+<p>You can also extract the right-most digit or digits from a number. For example, x % 10 yields the right-most digit of x (in base 10). Similarly, x % 100 yields the last two digits.</p>
+</li>
+</ul>
+<h3 id="29-string-operations"><strong>2.9 String operations</strong></h3>
+<ul>
+<li>
+<p>The + operator works with strings; it performs concatenation.</p>
+<pre><code class="language-python">&gt;&gt;&gt; first = '100'
+&gt;&gt;&gt; second = '150'
+&gt;&gt;&gt; print(first + second)
+100150
+</code></pre>
+</li>
+<li>
+<p>The * operator also works with strings by multiplying the content of a string by an integer.</p>
+</li>
+</ul>
+<h3 id="210-asking-the-user-for-input"><strong>2.10 Asking the user for input</strong></h3>
+<p>Python provides a built-in function called <strong>input</strong> that gets input from the keyboard . When this function is called, the program stops and waits for the user to type something. When the user presses Return or Enter, the program resumes and input returns what the user typed as a string.</p>
+<pre><code class="language-python">&gt;&gt;&gt; name = input('What is your name?\n')
+What is your name?
+Chuck
+&gt;&gt;&gt; print(name)
+Chuck
+</code></pre>
+<h3 id="211-comments"><strong>2.11 Comments</strong></h3>
+<pre><code class="language-python">v = 5 # velocity in meters/second.
+</code></pre>
+<h3 id="212-choosing-mnemonic-variable-names"><strong>2.12 Choosing mnemonic variable names</strong></h3>
+<h3 id="213-debugging"><strong>2.13 Debugging</strong></h3>
+<h3 id="214-glossary"><strong>2.14 Glossary</strong></h3>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SQL基础]]></title>
         <id>https://Cathy-Chen-ops.github.io/post/sql-ji-chu/</id>

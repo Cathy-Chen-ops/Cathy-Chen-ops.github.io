@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CH2 Variables, expressions, and statements | CathyChenの学习之旅</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+<link rel="shortcut icon" href="https://Cathy-Chen-ops.github.io/favicon.ico?v=1626666426445">
+<link rel="stylesheet" href="https://Cathy-Chen-ops.github.io/styles/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="2.1 Values and types
+&gt;&gt;&gt; type(3.2)
+&lt;class 'float'&gt;
+&gt;&gt;&gt; type('17')
+&lt;class 'str'&gt;
+
+2.2 Varia..." />
+    <meta name="keywords" content="PY4E,python" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://Cathy-Chen-ops.github.io">
+        <img src="https://Cathy-Chen-ops.github.io/images/avatar.png?v=1626666426445" class="site-logo">
+        <h1 class="site-title">CathyChenの学习之旅</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      今天不学习
+明天变垃圾
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://Cathy-Chen-ops.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CH2 Variables, expressions, and statements</h2>
+            <div class="post-date">2021-07-19</div>
+            
+            <div class="post-content" v-pre>
+              <h3 id="21-values-and-types"><strong>2.1 Values and types</strong></h3>
+<pre><code class="language-python">&gt;&gt;&gt; type(3.2)
+&lt;class 'float'&gt;
+&gt;&gt;&gt; type('17')
+&lt;class 'str'&gt;
+</code></pre>
+<h3 id="22-variables"><strong>2.2 Variables</strong></h3>
+<ul>
+<li>
+<p>An assignment statement creates new variables and gives them values:</p>
+<pre><code class="language-python">&gt;&gt;&gt; message = 'And now for something completely different'
+&gt;&gt;&gt; n = 17
+&gt;&gt;&gt; pi = 3.1415926535897931
+</code></pre>
+</li>
+</ul>
+<h3 id="23-variable-names-and-keywords"><strong>2.3 Variable names and keywords</strong></h3>
+<ul>
+<li>Variable names can be arbitrarily long.</li>
+<li>They can contain both letters and numbers, but they cannot start with a number.</li>
+<li>It is legal to use uppercase letters, but it is a good idea to begin variable names with a lowercase letter .</li>
+<li>The underscore character ( _ ) can appear in a name. Variable names can start with an underscore character, but we generally avoid doing this unless we are writing library code for others to use.</li>
+<li>Variables names are case sensitive, so LaTeX is not the same as latex.</li>
+</ul>
+<h3 id="24-statements"><strong>2.4 Statements</strong></h3>
+<p>A statement is a unit of code that the Python interpreter can execute.</p>
+<h3 id="25-operators-and-operands"><strong>2.5 Operators and operands</strong></h3>
+<p>Operators are special symbols that represent computations like addition and multiplication. The values the operator is applied to are called operands.</p>
+<p>The operators +, -, *, /, and ** perform addition, subtraction, multiplication, division, and exponentiation; in Python 3.x, the result of division is a floating point result.</p>
+<h3 id="26-expressions"><strong>2.6 Expressions</strong></h3>
+<p>An expression is a combination of values, variables, and operators. A value all by itself is considered an expression, and so is a variable.</p>
+<h3 id="27-order-of-operations"><strong>2.7 Order of operations</strong></h3>
+<ul>
+<li>the rules of precedence---<em>PEMDAS</em></li>
+</ul>
+<h3 id="28-modulus-operator"><strong>2.8 Modulus operator</strong></h3>
+<pre><code class="language-python">&gt;&gt;&gt; quotient = 7 // 3
+&gt;&gt;&gt; print(quotient)
+2
+&gt;&gt;&gt; remainder = 7 % 3
+&gt;&gt;&gt; print(remainder)
+1
+</code></pre>
+<p>The modulus operator turns out to be surprisingly useful.</p>
+<ul>
+<li>
+<p>you can check whether one number is divisible by another</p>
+</li>
+<li>
+<p>You can also extract the right-most digit or digits from a number. For example, x % 10 yields the right-most digit of x (in base 10). Similarly, x % 100 yields the last two digits.</p>
+</li>
+</ul>
+<h3 id="29-string-operations"><strong>2.9 String operations</strong></h3>
+<ul>
+<li>
+<p>The + operator works with strings; it performs concatenation.</p>
+<pre><code class="language-python">&gt;&gt;&gt; first = '100'
+&gt;&gt;&gt; second = '150'
+&gt;&gt;&gt; print(first + second)
+100150
+</code></pre>
+</li>
+<li>
+<p>The * operator also works with strings by multiplying the content of a string by an integer.</p>
+</li>
+</ul>
+<h3 id="210-asking-the-user-for-input"><strong>2.10 Asking the user for input</strong></h3>
+<p>Python provides a built-in function called <strong>input</strong> that gets input from the keyboard . When this function is called, the program stops and waits for the user to type something. When the user presses Return or Enter, the program resumes and input returns what the user typed as a string.</p>
+<pre><code class="language-python">&gt;&gt;&gt; name = input('What is your name?\n')
+What is your name?
+Chuck
+&gt;&gt;&gt; print(name)
+Chuck
+</code></pre>
+<h3 id="211-comments"><strong>2.11 Comments</strong></h3>
+<pre><code class="language-python">v = 5 # velocity in meters/second.
+</code></pre>
+<h3 id="212-choosing-mnemonic-variable-names"><strong>2.12 Choosing mnemonic variable names</strong></h3>
+<h3 id="213-debugging"><strong>2.13 Debugging</strong></h3>
+<h3 id="214-glossary"><strong>2.14 Glossary</strong></h3>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://Cathy-Chen-ops.github.io/tag/R9Op2nv99/" class="tag">
+                    PY4E
+                  </a>
+                
+                  <a href="https://Cathy-Chen-ops.github.io/tag/bTUGMFW1F/" class="tag">
+                    python
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://Cathy-Chen-ops.github.io/post/sql-ji-chu/">
+                  <h3 class="post-title">
+                    SQL基础
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
